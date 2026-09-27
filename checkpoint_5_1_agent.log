@@ -1,0 +1,568 @@
+[2026-09-22T13:55:03] Q1 AGENTIC
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages mainly report one limitation for the methods in the ICML paper: the “Synthesizers only” model cannot achieve high performance, and the “Generator only” RNN baseline shows only weak generalization, especially to previously unseen subexpressions like “odd” [DBLP_conf_icml_NyeHTS19.pdf]. In contrast, SKETCH ADAPT’s symbolic search is said to improve generalization, including to unseen “odd” and “even” cases [DBLP_conf_icml_NyeHTS19.pdf].
+
+The related or follow-up work cited in the passage is broad prior work in neural and hybrid program synthesis, including Balog et al. (2016), Devlin et al. (2017), Murali et al. (2017), Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018), and Parisotto et al. (2016) [DBLP_conf_icml_NyeHTS19.pdf]. 
+
+The CAV and SAT passages do not describe method limitations or follow-up work beyond conference/preface material and a description of Lynx as extending CryptoMiniSat with an API for user-provided clause generation [DBLP_conf_cav_2011.pdf] [DBLP_conf_sat_GaneshOSDRS12.pdf].
+------------------------------------------------------------------------
+[2026-09-22T13:55:03] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages report two main limitations:
+
+1. **SAT-based solving is often hard to apply directly because domains can be “too large or complex for solvers to handle.”** The proposed fix is to let users make “small domain-specific modifications” to the solver without breaking solver invariants. This is addressed by **Lynx**, which extends CryptoMiniSat with an API so user code can inspect partial solutions and add CNF clauses inside the solver loop [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+2. **The sketch-based program synthesis approach depends on how sketches are generated, and a fixed division of labor can limit flexibility/generalization.** The cited work says its key advance is learning that division of labor without extra supervision, and it evaluates a generator/synthesizer setup. It also notes that the “generator only” baseline shows **weak generalization**, especially failing on unseen subexpressions like “odd,” while the full method generalizes better [DBLP_conf_icml_NyeHTS19.pdf].
+
+Related or follow-up work cited to address these limitations includes:
+- For SAT-based solver adaptation: the paper positions **Lynx** itself as the extension to CryptoMiniSat that addresses the need for easy, adaptive domain-specific solver modifications [DBLP_conf_sat_GaneshOSDRS12.pdf].
+- For program sketch learning: the paper cites prior neural and sketch-based synthesis work, including **Murali et al. (2017)** as inspiration for program sketches, and related neural/program synthesis work by **Balog et al. (2016), Devlin et al. (2017), Parisotto et al. (2016), Kalyan et al. (2018), Bunel et al. (2018),** and **Shin et al. (2018)** [DBLP_conf_icml_NyeHTS19.pdf].
+
+The passages do not provide more detailed limitations or a specific separate follow-up method beyond these citations.
+------------------------------------------------------------------------
+[2026-09-22T13:55:14] Q2 AGENTIC
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: The 2023 papers in this collection are all about **reduced-order modeling / surrogate modeling for complex fluid flows**, especially **non-Newtonian or viscoelastic fluids**:
+
+- **Comparing different stabilization strategies for reduced order modeling of viscoelastic fluid flow problems** [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This paper focuses on how different stabilization methods affect reduced-order models for viscoelastic fluid flows.
+
+- **Thermo-rheological reduced order models for non-Newtonian fluid flows with power-law viscosity via the modal identification method** [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This work develops reduced-order models that incorporate thermo-rheological effects for non-Newtonian flows, using a modal identification approach.
+
+- **Multilayer models for hydrostatic Herschel–Bulkley viscoplastic flows** [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This paper presents multilayer models for viscoplastic flow governed by Herschel–Bulkley behavior.
+
+The earlier work on the same broad topic in the collection is:
+
+- **Model reduction for fluids, using balanced proper orthogonal decomposition** (2005) [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This is an earlier fluid-model-reduction paper using balanced proper orthogonal decomposition.
+
+- **Shallow water equations for non-Newtonian fluids** (2010) [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This paper studies shallow-water formulations for non-Newtonian fluids.
+
+- **A POD-Galerkin reduced-order model for two-dimensional Rayleigh-Bénard convection with viscoelastic fluid** (2020) [DBLP_conf_pldi_ChaudhuriS10.pdf]  
+  This later-but-still-earlier-than-2023 work uses POD-Galerkin reduction for a specific viscoelastic convection problem.
+
+### How the 2023 contributions differ
+Based on the passage, the 2023 papers appear to go beyond the earlier work by being **more specialized and more methodologically varied**:
+
+- They address **more specific constitutive settings** such as **viscoelastic**, **power-law**, and **Herschel–Bulkley viscoplastic** fluids [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- They emphasize **stabilization strategies**, **thermo-rheological effects**, and **modal identification**, suggesting a focus on improving robustness and adaptability of reduced models rather than only introducing reduction itself [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- Compared with the earlier papers, which are more about establishing reduction frameworks like **balanced POD** or **POD-Galerkin**, the 2023 papers seem to refine these ideas for **harder, more realistic fluid systems** [DBLP_conf_pldi_ChaudhuriS10.pdf].
+
+The passages do not provide enough detail to compare the papers more precisely than that.
+------------------------------------------------------------------------
+[2026-09-22T13:55:14] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: The provided passages do not contain enough information to answer this question.
+
+I can see one 2023 paper citation in the [DBLP_conf_pldi_ChaudhuriS10.pdf] passage — “Enhancing risk analysis toward a landscape digital twin framework: A multi-hazard approach in the context of a socio-economic perspective” — but there is no accompanying summary of its contributions, and there is no earlier work on the same topic described in the passages to compare against. The other passages are conference acknowledgements/program notes from CAV 2011 and do not discuss the relevant paper topic.
+------------------------------------------------------------------------
+[2026-09-22T13:55:18] Q3 AGENTIC
+Q: Tell me about the evaluation.
+A: [Clarifying question] Which paper or topic’s evaluation do you mean?
+------------------------------------------------------------------------
+[2026-09-22T13:55:18] Q3 FIXED
+Q: Tell me about the evaluation.
+A: The passages say the system was evaluated on test problems formulated as specifications, where the sketch generator produced candidate sketches and the synthesizer searched for full programs by filling in holes [DBLP_conf_icml_NyeHTS19.pdf].
+
+They also mention two evaluation settings/datasets:
+- a “varying training data size” experiment, where the model and baselines were trained on different dataset sizes and tested on a held-out test set; SKETCH ADAPT outperformed baselines especially in the low-data regime [DBLP_conf_icml_NyeHTS19.pdf]
+- the AlgoLisp domain, described as “Description to Programs,” involving programs over lists of integers and strings, with specs that include input-output examples and an additional description/natural-language component [DBLP_conf_icml_NyeHTS19.pdf]
+
+The passages further note that performance of the “Generator only” model depended a lot on beam size, while SKETCH ADAPT was less sensitive to beam size because enumeration could supplement a smaller beam [DBLP_conf_icml_NyeHTS19.pdf].
+
+If you want, I can also summarize the evaluation setup more specifically, but only based on the provided excerpts.
+------------------------------------------------------------------------
+[2026-09-24T17:41:13] Q1 AGENTIC
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The provided passages do not report any clear “main limitations” for a single methods collection, nor do they discuss follow-up work addressing those limitations in a way I can reliably summarize from the text alone.
+
+What the passages do say is:
+- The CAV 2011 passages are conference front matter, acknowledgments, and workshop/tutorial listings, not method limitations or follow-up research discussion. [DBLP_conf_cav_2011.pdf]
+- The ICML 2019 passage discusses one result where the “Generator only” RNN baseline shows weak generalization, while SKETCH ADAPT generalizes better, but this is presented as a result rather than a stated limitation section. It also cites related work in neural program synthesis and program induction, including Balog et al. (2016), Devlin et al. (2017), Murali et al. (2017), Parisotto et al. (2016), Kalyan et al. (2018), Bunel et al. (2018), and Shin et al. (2018). [DBLP_conf_icml_NyeHTS19.pdf]
+- The SAT paper describes a limitation of conventional SAT solvers for “large or complex” domains and proposes Lynx as an extension to make solver adaptation easier. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+If you meant a specific paper or methods section within these passages, I’d need that excerpt to answer more precisely.
+------------------------------------------------------------------------
+[2026-09-24T17:41:13] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages point to two main limitations:
+
+1. **SAT-based solver extensions are hard to adapt safely and efficiently.**  
+   The SAT paper says many domains are too large or complex for standard solvers, and while small domain-specific modifications can help, the challenge is to let users make those changes with minimal effort **without breaking subtle solver invariants**. The method introduced, Lynx, addresses this by letting user code inspect partial solutions and add clauses inside the solver’s inner loop. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+2. **Program-sketch learning has a fixed split between sketch generation and sketch filling, limiting flexibility.**  
+   The ICML paper says previous work used a fixed division of labor between generating sketches and filling them in, whereas their method learns this division without extra supervision. It also shows a baseline with only weak generalization, especially failing on unseen subexpressions like “odd” compared with “even.” [DBLP_conf_icml_NyeHTS19.pdf]
+
+Related or follow-up work cited in the passages includes:
+
+- For the sketch-based program synthesis line, the ICML paper says the approach is inspired by **Murali et al. (2017)**, and also cites related neural/symbolic synthesis work by **Balog et al. (2016), Devlin et al. (2017), Parisotto et al. (2016), Kalyan et al. (2018), Bunel et al. (2018), and Shin et al. (2018)**. [DBLP_conf_icml_NyeHTS19.pdf]
+- For the SAT solver extension work, the passage identifies **CryptoMiniSat [23]** as the solver extended by Lynx. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+The provided passages do not mention any explicit follow-up work beyond these citations.
+------------------------------------------------------------------------
+[2026-09-24T17:41:18] Q2 AGENTIC
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t summarize the 2023 papers or compare them to earlier work because no document passages were provided in the collection. If you share the paper excerpts or filenames/content, I can summarize the 2023 contributions and explain how they differ from the earlier work using only those sources.
+------------------------------------------------------------------------
+[2026-09-24T17:41:18] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t answer this from the provided passages alone.
+
+The only clearly identifiable 2023 item in the passages is a citation from a different paper’s reference list, not a paper from this collection itself: “Francesca Maria Ugliotti et al. … Sustainability, 2023” and related 2024/2025 references. The passages do not include the actual titles, abstracts, or contributions of any 2023 papers in this collection, nor enough context to compare them with earlier work on the same topic. [DBLP_conf_pldi_ChaudhuriS10.pdf]
+
+If you want, I can summarize the 2023 references that do appear, but I would need more passages containing the relevant paper text to compare contributions.
+------------------------------------------------------------------------
+[2026-09-24T17:41:22] Q3 AGENTIC
+Q: Tell me about the evaluation.
+A: [Clarifying question] Which paper or topic’s evaluation do you want me to describe?
+------------------------------------------------------------------------
+[2026-09-24T17:41:22] Q3 FIXED
+Q: Tell me about the evaluation.
+A: The passages describe the evaluation only in broad terms, not in full detail. What they do say is:
+
+- The system is evaluated on a set of test problems in the form of program specifications: the sketch generator produces candidate sketches conditioned on the spec, and the synthesizer then searches for full programs by filling in holes in those sketches [DBLP_conf_icml_NyeHTS19.pdf].
+- Performance is discussed with respect to different evaluation budgets and beam sizes; the paper notes that the SKETCH ADAPT system is less dependent on beam size than a “Generator only” RNN model, suggesting it can compensate for a smaller beam with symbolic enumeration [DBLP_conf_icml_NyeHTS19.pdf].
+- One reported evaluation domain is AlgoLisp, where the dataset contains programs manipulating lists of integers and lists of strings, and each specification includes input-output examples plus an additional description [DBLP_conf_icml_NyeHTS19.pdf].
+- The passage also mentions a figure titled “AlgoLisp: varying training data size,” stating that the model and baselines were trained on various dataset sizes and evaluated on a held-out test dataset, with SKETCH ADAPT outperforming baselines in the low-data regime [DBLP_conf_icml_NyeHTS19.pdf].
+
+If you want, I can also summarize the evaluation setup as a concise bullet list.
+------------------------------------------------------------------------
+[2026-09-24T17:54:28] Q1 AGENTIC
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages describe two different works, so the limitations and follow-up work are different:
+
+- For the CAV 2011 conference passages, no methodological limitations are reported; they are mainly organizational acknowledgements and descriptions of the conference program. No related or follow-up work is cited in the provided text. [DBLP_conf_cav_2011.pdf]
+
+- For the ICML 2019 SKETCH ADAPT passage, the main limitation implied is that prior methods had a fixed division of labor between sketch generation and sketch completion, which the paper says its approach improves by learning this division without extra supervision. It also notes that some tasks require explicit search rather than pattern recognition, motivating the use of holes in sketches. Related work cited as inspiration includes neural program synthesis by Balog et al. (2016), Devlin et al. (2017), and Murali et al. (2017), as well as more recent deep-learning or hybrid symbolic/learned approaches such as Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018), and Parisotto et al. (2016). The authors also say future work will explore these ideas in other AI domains. [DBLP_conf_icml_NyeHTS19.pdf]
+
+If you want, I can also summarize the limitations and follow-up work paper by paper in a compact table.
+------------------------------------------------------------------------
+[2026-09-24T17:54:28] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: From the passages, the main limitations reported are:
+
+- **SAT-based solvers need domain-specific adaptation, but making those adaptations is hard**: many domains are “too large or complex” for off-the-shelf solvers, and the challenge is to let users make small changes “with minimal effort” without breaking solver invariants. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+- **The approach depends on user-provided, solver-internal code**: the paper says the added code is called inside the SAT solver’s inner loop so users can integrate clause-generation heuristics, which implies the method requires careful low-level integration. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+- **The sketch-based program synthesis setup has a fixed division of labor in prior work**: previous methods fixed how sketch generation and sketch filling were split, whereas this work learns that split. [DBLP_conf_icml_NyeHTS19.pdf]
+- **The generator-only baseline shows weak generalization**: it can solve tasks requiring the “even” subexpression, but not those requiring the previously unseen “odd” subexpression. [DBLP_conf_icml_NyeHTS19.pdf]
+
+Related or follow-up work cited in the passages includes:
+
+- For the SAT solver work: the passage cites **CryptoMiniSat** as the solver extended by Lynx. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+- For the sketch-based synthesis work: it cites **Murali et al. (2017)** as inspiration for program sketches, and compares to / builds on **Balog et al. (2016), Devlin et al. (2017), Murali et al. (2017), Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018), and Parisotto et al. (2016)**. [DBLP_conf_icml_NyeHTS19.pdf]
+- In the generalization discussion, it mentions **Bednarek et al. (2018)** for filtering the datasets and introducing the “even” expression. [DBLP_conf_icml_NyeHTS19.pdf]
+
+The passages do not provide a single unified list of limitations and follow-up work for all methods in the collection, only these paper-specific points.
+------------------------------------------------------------------------
+[2026-09-24T17:54:34] Q2 AGENTIC
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t answer this from the provided material because no document passages were included. Since there are no papers or source files to reference, I can’t summarize the 2023 papers or compare them to earlier work.
+
+If you provide the passages or document excerpts, I can summarize the 2023 papers and explain how their contributions differ from the earlier work, citing the relevant source files.
+------------------------------------------------------------------------
+[2026-09-24T17:54:34] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t answer this from the provided passages alone.
+
+The passages are mostly from CAV 2011 conference front matter and a partial bibliography snippet from a different paper. I do not have enough information to identify which papers in the collection are from 2023, what their topics are, or which earlier works they should be compared against. The only 2023 item visible is a citation in a bibliography snippet, not a full paper summary [DBLP_conf_pldi_ChaudhuriS10.pdf].
+
+If you provide the 2023 paper passages or the relevant bibliography entries, I can summarize them and compare their contributions to earlier work on the same topic.
+------------------------------------------------------------------------
+[2026-09-24T17:54:37] Q3 AGENTIC
+Q: Tell me about the evaluation.
+A: [Clarifying question] Which paper or topic do you want the evaluation for?
+------------------------------------------------------------------------
+[2026-09-24T17:54:37] Q3 FIXED
+Q: Tell me about the evaluation.
+A: The passages describe evaluation in terms of testing the system on sets of specifications and comparing candidate sketches/programs under a symbolic search procedure [DBLP_conf_icml_NyeHTS19.pdf].
+
+Key points mentioned:
+
+- For each test problem/specification, the sketch generator outputs a distribution over sketches, a fixed number of candidate sketches are sampled, and the synthesizer then searches each sketch to fill in holes and find a full program satisfying the spec [DBLP_conf_icml_NyeHTS19.pdf].
+- The evaluation compares the SKETCH ADAPT system against baselines, including a “Generator only” RNN model and a “Synthesizer only” model (Deepcoder) [DBLP_conf_icml_NyeHTS19.pdf].
+- In the AlgoLisp domain, the paper says the system was evaluated on the AlgoLisp DSL and dataset, which contains programs manipulating lists of integers and strings; each specification includes input-output examples and additional description text [DBLP_conf_icml_NyeHTS19.pdf].
+- The paper reports that SKETCH ADAPT “considerably outperforms baselines in the low-data regime,” and that it “matches or exceeds” the performance of the Generator-only model, with less dependence on beam size than that model [DBLP_conf_icml_NyeHTS19.pdf].
+
+The passages do not provide the exact evaluation metrics, full experimental setup, or numerical results, so I can’t add those without guessing.
+------------------------------------------------------------------------
+[2026-09-26T11:43:35] Q1 AGENTIC
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages report limitations for only some of the methods in this collection:
+
+- For the visco-plastic ROM work, the main limitations are that these flows are hard to model because the governing equations are hyperbolic, fluxes and source terms depend strongly on the solution and parameters, and delicate features like yield surfaces, plug regions, and stopping time are difficult to capture; standard linear reduction techniques are said to be insufficient without careful adaptation. The paper addresses this by proposing a non-intrusive reduced-order model using low-rank tensor decomposition, following the approach of [14]. [DBLP_conf_pldi_ChaudhuriS10.pdf]
+
+- For the SKETCH ADAPT program synthesis work, the “Synthesizers only” model is unable to achieve high performance, and the “Generator only” RNN baseline shows only weak generalization to unseen subexpressions such as “odd,” whereas SKETCH ADAPT generalizes strongly. The paper says its approach is inspired by prior neural program synthesis work from Balog et al. (2016), Devlin et al. (2017), and Murali et al. (2017), and also cites related learning/program-synthesis and hybrid-symbolic work including Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018), and Parisotto et al. (2016). [DBLP_conf_icml_NyeHTS19.pdf]
+
+- For the SAT-solver extension work, the main challenge is that user adaptations must be made with minimal effort and without breaking subtle invariants in the solver implementation. The cited related system is CryptoMiniSat, which Lynx extends with an API for user-provided code to inspect partial solutions and add CNF clauses during the solver’s inner loop. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+The passages do not provide a complete “collection-wide” summary beyond these paper-specific limitations and cited related/follow-up work.
+------------------------------------------------------------------------
+[2026-09-26T11:43:35] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: From the provided passages, the main limitation described is that the method for code synthesis relies on an intermediate **program sketch** with `<HOLE>` tokens, and the balance between sketch generation and hole-filling must be handled carefully. The paper notes that:
+
+- for some programs, the sketch generator should produce **very complete sketches** when familiar patterns are enough;
+- for unfamiliar or difficult programs, it should produce **very general sketches**, leaving more work to the synthesizer; and
+- the system must also be **robust to the evaluation budget / timeout**, since the available synthesis time may vary [DBLP_conf_icml_NyeHTS19.pdf].
+
+The passage also explicitly says the approach is **inspired by work such as Murali et al. (2017)**, which is the related work cited in connection with the sketch-based formulation [DBLP_conf_icml_NyeHTS19.pdf].
+
+For the SAT-related paper, the limitation is that many domains are too **large or complex for solvers to handle**, and the proposed solution is to let users make **small domain-specific adaptations** to a SAT solver while preserving invariants and making the solver adaptive and efficient [DBLP_conf_sat_GaneshOSDRS12.pdf]. The cited follow-up/related development in the passage is the creation of **Lynx**, which extends **CryptoMiniSat** with an API so user code can inspect partial solutions and add clauses during the solver’s inner loop [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+I do not see any more specific follow-up work named in the passages beyond these citations.
+------------------------------------------------------------------------
+[2026-09-26T11:43:43] Q2 AGENTIC
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t answer this from the provided passages alone.
+
+The passages only include material from:
+- `DBLP_conf_icml_NyeHTS19.pdf` (2019)
+- `DBLP_conf_pldi_ChaudhuriS10.pdf` (2010)
+- `DBLP_conf_cav_2011.pdf` (2011)
+
+There are no 2023 papers shown in the excerpts, so I don’t have enough information to summarize “the papers from 2023 in this collection” or compare them to earlier work on the same topic.
+------------------------------------------------------------------------
+[2026-09-26T11:43:43] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: I can’t answer that from the provided passages.
+
+The only clearly relevant paper passage is from **[DBLP_conf_icml_NyeHTS19.pdf]**, which appears to be about a neuro-symbolic program synthesis system called SketchAdapt, but it is from 2019, not 2023. The other passages are from **[DBLP_conf_cav_2011.pdf]** and are conference acknowledgments/info, not topic papers. There are no 2023 papers in the excerpts, so I can’t summarize “the papers from 2023 in this collection” or compare them to earlier work based on the provided text.
+
+If you want, I can summarize the 2019 SketchAdapt paper and its relation to earlier program-synthesis work from the passage.
+------------------------------------------------------------------------
+[2026-09-26T11:43:45] Q3 AGENTIC
+Q: Tell me about the evaluation.
+A: [Clarifying question] Which paper or topic do you mean by “the evaluation”?
+------------------------------------------------------------------------
+[2026-09-26T11:43:45] Q3 FIXED
+Q: Tell me about the evaluation.
+A: The passages say the system is evaluated by giving it a set of test problems in the form of program specifications, then:
+
+- The sketch generator, conditioned on the specification, outputs a distribution over sketches.
+- A fixed number of candidate sketches are sampled from that distribution.
+- Each candidate sketch is passed to the program synthesizer.
+- The synthesizer performs symbolic enumeration/search to fill in the holes and find full programs that satisfy the spec. [DBLP_conf_icml_NyeHTS19.pdf]
+
+They also say the training is designed to be robust to different evaluation budgets/timeouts: rather than assuming a fixed timeout, the generator is trained to produce sketches that work well across a distribution of budgets, so it can be agnostic to how much synthesis time will be available at evaluation time. [DBLP_conf_icml_NyeHTS19.pdf]
+
+The passages do not give more detailed evaluation results or metrics.
+------------------------------------------------------------------------
+[2026-09-27T08:05:18] Q1 AGENTIC
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages report different limitations for the methods in the collection:
+
+- **For the tensor-based ROM / TROM approach**, the main challenges are that the governing equations are hyperbolic, producing sharp fronts; the fluxes and source terms depend strongly and nonlinearly on the solution and parameters; and it is difficult to accurately capture features like yield surfaces, plug regions, and stopping time, especially across changing parameters. Standard linear reduction techniques are said to be insufficient without adaptation. The paper addresses these issues by proposing a **non-intrusive reduced-order model using low-rank tensor decomposition (LRTD)** [DBLP_conf_pldi_ChaudhuriS10.pdf].
+
+- **For SKETCH ADAPT**, the limitation of a pure neural baseline is weak generalization to novel tasks, especially when a task requires an unseen subexpression such as “odd.” The paper reports that the symbolic-search component helps stronger generalization than pure neural search methods [DBLP_conf_icml_NyeHTS19.pdf].
+
+- **For the SAT solver extension Lynx**, the limitation is that many domains are too large or complex for existing solvers, and users need small domain-specific modifications without breaking subtle solver invariants. The paper responds by providing an API for user-provided code to inspect partial solutions and add CNF clauses back into the solver, enabling specialized and maintainable adaptive solvers [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+As for related or follow-up work cited in the passages:
+
+- The SKETCH ADAPT paper cites prior neural and hybrid program synthesis work by **Balog et al. (2016), Devlin et al. (2017), Murali et al. (2017), Parisotto et al. (2016), Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018)**, and **Bednarek et al. (2018)** [DBLP_conf_icml_NyeHTS19.pdf].
+
+- The TROM paper says it follows the approach of **[14]** and references **[19]** for experimental data and **[18]** for recent results on wet-bed propagation [DBLP_conf_pldi_ChaudhuriS10.pdf].
+
+- The SAT paper cites **CryptoMiniSat [23]** as the solver it extends [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+If you want, I can also summarize these limitations in a compact table.
+------------------------------------------------------------------------
+[2026-09-27T08:05:18] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+A: The passages do not report a clear set of “main limitations” for the methods in this collection, nor do they describe specific related or follow-up work addressing those limitations in detail.
+
+What is stated is:
+
+- For the code-synthesis method, a key challenge is that the division of labor between sketch generation and sketch filling had previously been fixed, and their approach learns this division without additional supervision. It also notes a robustness issue: at train time the system does not know the evaluation timeout, so it is trained to be agnostic to budget by sampling the budget from a distribution. [DBLP_conf_icml_NyeHTS19.pdf]
+- For the SAT-solver extension, the problem is that many domains are too large or complex for solvers to handle directly, and the proposed solution is to let users make small domain-specific modifications via an API without breaking solver invariants. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+The only explicitly cited related work in the passages is:
+- Murali et al. (2017), which inspired the sketch-based program representation. [DBLP_conf_icml_NyeHTS19.pdf]
+- CryptoMiniSat, which Lynx extends. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+If you want, I can also extract a concise “limitations vs. cited related work” table from just these passages.
+------------------------------------------------------------------------
+[2026-09-27T08:05:27] Q2 AGENTIC
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: The passages only provide enough detail to identify one 2023 paper in the collection related to reduced-order modeling of viscoelastic or non-Newtonian fluid flows, plus some earlier related works, but they do not give full abstracts or contribution summaries for all the 2023 papers. Based on what is shown:
+
+- A 2023 paper by **Chiello, Gaetano D’Avino, and Luisa Rocha Da Silva** is titled *“Comparing different stabilization strategies for reduced order modeling of viscoelastic fluid flow problems”* [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- Other 2023 works listed in the excerpt are:
+  - *“Multilayer models for hydrostatic Herschel–Bulkley viscoplastic flows”* by **Enrique Domingo Fernández-Nieto, José Garres-Díaz, and Paul Vigneaux** [DBLP_conf_pldi_ChaudhuriS10.pdf]
+  - *“Thermo-rheological reduced order models for non-Newtonian fluid flows with power-law viscosity via the modal identification method”* by **Manuel Girault, Qiao Lin, Nadine Allanic, and Pierre Mousseau** [DBLP_conf_pldi_ChaudhuriS10.pdf]
+  - *“A POD-Galerkin reduced-order model for two-dimensional Rayleigh-Bénard convection with viscoelastic fluid”* by **Yue Wang et al.** [DBLP_conf_pldi_ChaudhuriS10.pdf]
+  - *“Data-driven physics-informed neural networks: A digital twin perspective”* by **Sunwoong Yang et al.** [DBLP_conf_pldi_ChaudhuriS10.pdf]
+
+What can be inferred from the titles is:
+
+- The **2023 papers** appear to focus on **more specialized or advanced modeling strategies** for fluid dynamics, including stabilization strategies, multilayer viscoplastic flow modeling, thermo-rheological reduced-order modeling, and POD-Galerkin modeling [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- The **earlier work** in the same general area, as cited in the passage, includes foundational methods like:
+  - **Multilinear SVD** (a general tensor decomposition method) from 2000 [DBLP_conf_pldi_ChaudhuriS10.pdf]
+  - **Shallow water equations for non-Newtonian fluids** from 2010 [DBLP_conf_pldi_ChaudhuriS10.pdf]
+
+However, the passages do **not** explain the actual contributions of these papers in enough detail to reliably compare their methods beyond these broad topic-level differences. So I can’t give a precise “how their contributions differ” summary without guessing.
+------------------------------------------------------------------------
+[2026-09-27T08:05:27] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+A: The provided passages do not include any papers from 2023, so I can’t summarize 2023 papers in this collection or compare their contributions to earlier work on the same topic. The only relevant paper excerpt here is from an ICML 2019 paper on SketchAdapt, which describes a neuro-symbolic program synthesis system with a learned neural sketch generator plus enumerative symbolic search, and says it improves data efficiency and out-of-sample generalization over RNN-based models [DBLP_conf_icml_NyeHTS19.pdf].
+------------------------------------------------------------------------
+[2026-09-27T08:05:29] Q3 AGENTIC
+Q: Tell me about the evaluation.
+A: [Clarifying question] Which paper or topic’s evaluation do you mean?
+------------------------------------------------------------------------
+[2026-09-27T08:05:29] Q3 FIXED
+Q: Tell me about the evaluation.
+A: The passages describe the evaluation only in broad terms, not with detailed results. The system is tested on a set of problems given as specs: the sketch generator, conditioned on the program spec, outputs a distribution over sketches; a fixed number of candidate sketches are sampled; and each candidate sketch is passed to the program synthesizer, which searches for full programs by filling in holes until it finds one that satisfies the spec [DBLP_conf_icml_NyeHTS19.pdf]. The text also says the model is trained to be robust to different evaluation timeouts by sampling the synthesis budget from a distribution, so it can handle unknown evaluation budgets [DBLP_conf_icml_NyeHTS19.pdf].  
+
+I don’t see quantitative evaluation metrics or experimental results in the provided passages.
+------------------------------------------------------------------------
+[2026-09-27T09:51:32] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 0, "action": "semantic_search", "reasoning": "I need an initial broad search over the collection to find passages discussing method limitations and any cited follow-up work.", "queries": ["main limitations reported by the methods in this paper collection", "limitations and cited follow-up or related work addressing those limitations"], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:51:34] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 1, "action": "follow_citation", "reasoning": "We have a clear anchor paper, but the current passages are not yet enough to answer the collection-wide limitations and the cited follow-up/related work.", "queries": [], "keyword": "", "year": "", "doc_ids": ["DBLP_conf_icml_NyeHTS19.pdf"], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:51:35] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 2, "action": "answer", "reasoning": "The collected passages already describe the main limitations and cite the related/follow-up work for the relevant methods, so I can answer directly.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:52:00] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 0, "action": "semantic_search", "reasoning": "Need an initial broad search to identify papers discussing limitations and cited follow-up work.", "queries": ["limitations reported by methods in this collection", "related follow-up work cited to address limitations"], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:52:01] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 1, "action": "answer", "reasoning": "parse-fail -> stop", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:52:10] Q1 AGENT
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ['limitations reported by methods in this collection', 'related follow-up work cited to address limitations']
+A: The context highlights different limitations for the methods in the cited papers, but it does **not** give one unified limitation list for the whole collection. The main reported limitations are:
+
+- For the **SKETCH ADAPT / neural program synthesis** work, the “Generator only” RNN baseline shows only **weak generalization**: it can solve novel tasks requiring the seen `even` subexpression, but not tasks requiring the previously unseen `odd` subexpression. SKETCH ADAPT is presented as addressing this through symbolic search and stronger generalization [DBLP_conf_icml_NyeHTS19.pdf].
+- For the **tensor ROM for visco-plastic shallow flows**, the paper says standard **linear reduction techniques are insufficient** because the governing equations are hyperbolic, flux/source nonlinearities are strong, and delicate features like yield surfaces and stopping times are hard to capture. The proposed low-rank tensor decomposition method is meant to address these issues [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- For **Lynx / programmatic SAT solving**, the limitation is that SAT solvers are often **unpredictable black boxes** and hard to adapt to domain-specific problems without breaking solver invariants. Lynx addresses this by exposing an API/callback mechanism for user code inside the solver loop [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+Related or follow-up work cited in the provided context includes:
+
+- For the neural program synthesis line of work: prior neural or hybrid synthesis work by **Balog et al. (2016), Devlin et al. (2017), Murali et al. (2017), Parisotto et al. (2016), Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018)**, and a comparison to **Bednarek et al. (2018)** via the “filtered” evaluation setup [DBLP_conf_icml_NyeHTS19.pdf].
+- For the visco-plastic ROM work: it explicitly says they **follow the approach of [14]** and mentions agreement with results from **[18]** [DBLP_conf_pldi_ChaudhuriS10.pdf].
+- For Lynx/programmatic SAT solving: it builds on **CryptoMiniSat [23]** and discusses incremental/adaptive solving as the relevant surrounding area [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+If you want, I can also turn this into a concise table with “method / limitation / cited follow-up work.”
+Judge: {'relevance': 5, 'faithfulness': 4, 'completeness': 4, 'overall': 4, 'rationale': 'The response addresses the question well by summarizing limitations and citing related work for each passage. Minor issues are that it slightly over-interprets some follow-up links and does not clearly distinguish which cited works are explicit follow-ups versus broader related work, but everything stated is broadly supported by the passages.'}
+------------------------------------------------------------------------
+[2026-09-27T09:52:12] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ['What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?']
+A: The provided context only contains enough detail for one paper’s method, and it does **not** explicitly report a set of “main limitations” for the whole collection or cite specific follow-up work addressing those limitations. From the ICML paper excerpt, the main limitation implied is that the sketch generator/synthesizer division must handle a tradeoff between **pattern-based recognition** and **explicit search**, and the system is trained to be robust to **uncertainty in the evaluation budget** rather than relying on a fixed timeout [DBLP_conf_icml_NyeHTS19.pdf].
+
+The only related prior work explicitly mentioned in the excerpt is **Murali et al. (2017)**, which inspired the use of an intermediate program sketch representation, but the excerpt does not provide details about that work’s limitations or about later follow-up work [DBLP_conf_icml_NyeHTS19.pdf].
+
+If you want, I can also summarize the limitations and related work for the SAT solver paper in the context, but the current snippet there is too incomplete to identify follow-up work beyond the Lynx extension itself [DBLP_conf_sat_GaneshOSDRS12.pdf].
+Judge: {'relevance': 3, 'faithfulness': 4, 'completeness': 2, 'overall': 3, 'rationale': 'The response stays on topic and avoids inventing unsupported specifics, but it does not answer the question well because it only discusses one paper and mostly says the passages are insufficient. Its claims about the excerpted method are mostly supported, yet it misses the requested collection-wide limitations and related/follow-up work.'}
+------------------------------------------------------------------------
+[2026-09-27T09:52:13] PLAN
+{"question": "Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same t", "step": 0, "action": "clarify", "reasoning": "The request says “this collection” but no catalog or topic is provided, so I need one clarification before searching.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:52:16] Q2 AGENT
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: []
+A: [Clarifying question] Which topic or paper collection should I summarize?
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The question was unanswerable without knowing which collection/topic was meant, so asking for clarification was the right move. The clarifying question is precise and necessary.'}
+------------------------------------------------------------------------
+[2026-09-27T09:52:17] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: ['Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.']
+A: I can’t answer that from the provided context.
+
+The only paper content shown is from **[DBLP_conf_icml_NyeHTS19.pdf]** (an ICML 2019 paper about a neuro-symbolic program synthesis system, SketchAdapt) plus unrelated CAV 2011 conference front matter. There are **no 2023 papers** in the context, so I can’t summarize “the papers from 2023 in this collection” or compare them to earlier work on the same topic without guessing.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The response correctly identifies that the provided passages do not include any 2023 papers and avoids fabricating a summary or comparison. It directly answers by explaining the limitation of the context, which is the appropriate move here.'}
+------------------------------------------------------------------------
+[2026-09-27T09:52:18] PLAN
+{"question": "Tell me about the evaluation.", "step": 0, "action": "clarify", "reasoning": "The question is too vague to search without knowing which paper or evaluation context you want.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:52:21] Q3 AGENT
+Q: Tell me about the evaluation.
+Actions: []
+A: [Clarifying question] Which paper or topic do you mean by “the evaluation”?
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The question is too vague to answer from the available context, so asking a clarifying question was the right move. The response is precise and appropriate given that no passages were provided.'}
+------------------------------------------------------------------------
+[2026-09-27T09:52:23] Q3 FIXED
+Q: Tell me about the evaluation.
+Actions: ['Tell me about the evaluation.']
+A: The evaluation is described as a search over candidate sketches generated from a learned distribution, followed by symbolic synthesis to fill in the holes and check whether the resulting program satisfies the spec. Concretely, for each test problem/spec, the sketch generator outputs a distribution over sketches, a fixed number of candidate sketches are sampled, and then each sketch is passed to the program synthesizer, which performs symbolic enumeration to search for full programs that maximize likelihood of the spec [DBLP_conf_icml_NyeHTS19.pdf].
+
+The training objective is also made robust to evaluation-time budget uncertainty: instead of assuming a fixed timeout, the method samples the budget \(t\) from a distribution during training so the generator learns sketches that are suitable across a range of evaluation budgets [DBLP_conf_icml_NyeHTS19.pdf].
+
+If you want, I can also summarize the evaluation setup in more detail, but the provided context only gives this high-level description.
+Judge: {'relevance': 4, 'faithfulness': 5, 'completeness': 3, 'overall': 4, 'rationale': 'The response addresses the evaluation process in the passages by describing the sketch generation, candidate selection, symbolic synthesis, and budget-robust training. It is faithful to the provided text, but it only gives a high-level summary and does not fully explain the evaluation beyond what the passages state.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:33] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 0, "action": "semantic_search", "reasoning": "We need an initial broad search over the collection for papers discussing method limitations and cited follow-up or related work.", "queries": ["limitations reported by methods in this paper collection", "follow-up work cited to address limitations related work"], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:55:34] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 1, "action": "answer", "reasoning": "The retrieved passages already indicate the main limitations and mention the related work/follow-up directions, so I can summarize them now.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:55:41] Q1 AGENT
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ['limitations reported by methods in this paper collection', 'follow-up work cited to address limitations related work']
+A: The limitations described in this context are different across the papers, but the main ones are:
+
+1. **For the tensor-based ROM / TROM method**  
+   - The paper says standard linear reduction techniques are **insufficient** because the target flow problems are **hyperbolic**, with **sharp fronts**, **strong nonlinearity** in fluxes/source terms, and **delicate features** like yield surfaces, plug regions, and stopping time that are hard to capture accurately.  
+   - It also notes that the method’s advantage is that it avoids time integration of reduced equations and supports rapid evaluation, but the challenge is still the difficulty of accurately representing these complex visco-plastic flows.  
+   - The related work cited as the approach they follow is **[14]** for the non-intrusive ROM idea, and the paper also references **[19]** for the high-fidelity FOM data source. [DBLP_conf_pldi_ChaudhuriS10.pdf]
+
+2. **For SKETCH ADAPT**  
+   - A key limitation discussed is that a plain **“Generator only” RNN baseline shows weak generalization**, especially failing on tasks requiring an **unseen subexpression** like `odd`, even though it can handle `even`.  
+   - The paper also says the **“Synthesizers only”** model is unable to achieve high performance in the reported domain, and that performance depends strongly on training set size.  
+   - To address this, the paper presents **SKETCH ADAPT**, which combines neural sketch generation with symbolic search and is said to generalize better than pure neural search methods.  
+   - Related work cited includes neural program synthesis work by **Balog et al. (2016), Devlin et al. (2017), and Murali et al. (2017)**, plus later deep-learning/program-synthesis work by **Kalyan et al. (2018), Bunel et al. (2018), Shin et al. (2018), and Parisotto et al. (2016)**. [DBLP_conf_icml_NyeHTS19.pdf]
+
+3. **For Lynx / SAT solver extension**  
+   - The limitation is that many SAT-solving domains are **too large or complex for solvers to handle**, and even when adaptation is possible, users should be able to make **small domain-specific modifications** without breaking solver invariants.  
+   - The paper’s proposed solution is Lynx, which lets users inspect partial solutions and add clauses during the solver’s inner loop.  
+   - The cited related system is **CryptoMiniSat**, which Lynx extends. [DBLP_conf_sat_GaneshOSDRS12.pdf]
+
+If you want, I can also reorganize this into a concise “limitations vs. citations” table.
+Judge: {'relevance': 5, 'faithfulness': 4, 'completeness': 4, 'overall': 4, 'rationale': 'The response addresses the question well by summarizing limitations and citing related/follow-up work from the provided passages. It is mostly faithful, though it adds a few inferred generalizations (especially around the TROM and SAT solver passages) and includes some extra material beyond the main ask.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:43] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ['What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?']
+A: The provided context does not contain a report of the methods’ main limitations or a discussion of related/follow-up work addressing those limitations. It only describes the sketch-based code synthesis approach and a SAT solver extension API, without an explicit limitations section or cited follow-up work [DBLP_conf_icml_NyeHTS19.pdf] [DBLP_conf_sat_GaneshOSDRS12.pdf].
+Judge: {'relevance': 5, 'faithfulness': 4, 'completeness': 2, 'overall': 3, 'rationale': 'The response directly answers by saying the passages do not report the limitations or follow-up work, which is relevant and mostly faithful. However, it is incomplete because it does not extract any specific limitations or related work that may actually be present in the passages, and it leans too heavily on the absence of an explicit section.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:44] PLAN
+{"question": "Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same t", "step": 0, "action": "clarify", "reasoning": "The question asks about papers from 2023 in the collection, but no collection/topic is specified yet, so I need one clarifying detail before searching.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:55:47] Q2 AGENT
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: []
+A: [Clarifying question] Which topic or paper collection should I summarize from 2023?
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The question was underspecified because no collection or topic was provided in the passages, so asking for clarification was the right move. The clarification is precise and necessary, with no unsupported claims.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:48] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: ['Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.']
+A: I can’t answer that from the provided context.
+
+The only paper content shown is from **[DBLP_conf_icml_NyeHTS19.pdf]** (an ICML 2019 paper about a neuro-symbolic program synthesis system) plus unrelated CAV 2011 conference front matter. There are **no 2023 papers in the context**, so I can’t summarize “the papers from 2023 in this collection” or compare them to earlier work on the same topic without additional source files.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The response correctly identifies that the provided passages do not contain any 2023 papers and therefore the question cannot be answered from the available context. It is faithful, relevant, and appropriately complete given the evidence.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:49] PLAN
+{"question": "Tell me about the evaluation.", "step": 0, "action": "clarify", "reasoning": "The question is too vague to search because no paper, topic, or metric is specified.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:55:53] Q3 AGENT
+Q: Tell me about the evaluation.
+Actions: []
+A: [Clarifying question] Which paper or topic’s evaluation do you mean?
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The question was too vague to answer from the provided context, so asking for clarification was the right move. The clarifying question is precise and directly addresses the ambiguity.'}
+------------------------------------------------------------------------
+[2026-09-27T09:55:54] Q3 FIXED
+Q: Tell me about the evaluation.
+Actions: ['Tell me about the evaluation.']
+A: The provided context says the system is evaluated by taking a set of test problems, each given as a spec, and then:  
+
+1. The sketch generator, conditioned on the spec, outputs a distribution over sketches.  
+2. A fixed number of candidate sketches are extracted.  
+3. Each candidate sketch is passed to the program synthesizer.  
+4. The synthesizer performs symbolic enumeration to fill in holes and search for a full program satisfying the spec. [DBLP_conf_icml_NyeHTS19.pdf]
+
+The context also notes that the training objective is made robust to different evaluation timeouts by sampling the budget \(t\) from a distribution \(D_t\), so the generator learns sketches that work across a wide range of evaluation budgets. [DBLP_conf_icml_NyeHTS19.pdf]
+
+I don’t have more detailed evaluation results, metrics, or datasets in the provided context.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 4, 'overall': 5, 'rationale': "The response directly addresses the evaluation process described in the passages and stays within the provided evidence. It also correctly notes the lack of detailed metrics or results in the context, though it could have said a bit more about what 'evaluation' means in the paper."}
+------------------------------------------------------------------------
+[2026-09-27T09:59:07] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 0, "action": "list_papers", "reasoning": "Need to identify the relevant papers in the collection before reading their limitations and cited follow-up work.", "queries": [], "keyword": "limitations related work follow-up methods", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:09] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 1, "action": "read_section", "reasoning": "The catalog strongly suggests two relevant methods papers; reading their limitations sections is the fastest way to identify reported limitations and any cited follow-up work.", "queries": [], "keyword": "", "year": "", "doc_ids": ["DBLP_conf_icml_NyeHTS19.pdf", "DBLP_conf_sat_GaneshOSDRS12.pdf"], "section": "limitations"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:11] PLAN
+{"question": "What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited t", "step": 2, "action": "follow_citation", "reasoning": "We have some limitation context but not yet enough cited related/follow-up work, so the next step is to pull in cited papers from the two identified methods.", "queries": ["What related work or prior/follow-up work is cited in Learning to Infer Program Sketches (Nye et al. 2019) to address its limitations?", "What related work or follow-up work is cited in Lynx: A Programmatic SAT Solver (Ganesh et al. 2012) to address its limitations?"], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:11] PLAN
+step cap reached (3) -> answer
+------------------------------------------------------------------------
+[2026-09-27T09:59:19] Q1 AGENT
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ["list_papers(year='', keyword='limitations related work follow-up methods')", 'read_section:DBLP_conf_icml_NyeHTS19.pdf:limitations', 'read_section:DBLP_conf_sat_GaneshOSDRS12.pdf:limitations', 'citation:Murali et al. (2017)', 'citation:Copyright 2019']
+A: The provided context does not contain explicit “limitations” sections for these papers, so I can only summarize what is implied in the available passages and the cited related work.
+
+### Implied limitations of the methods
+- **Static, hand-designed intermediate sketches limit flexibility**: In the program-sketch paper, previous systems used fixed sketch grammars, which prevented learning how much should be handled by pattern recognition versus symbolic search [DBLP_conf_icml_NyeHTS19.pdf].
+- **Need for supervision / fixed division of labor**: Prior sketch-based systems could not adapt the amount of detail in a sketch to task difficulty, because the sketch granularity was predetermined [DBLP_conf_icml_NyeHTS19.pdf].
+- **RNN-only approaches generalize weakly to novel compositions**: The paper notes that a “Generator only” RNN baseline showed weak generalization to tasks requiring an unseen subexpression such as `odd`, compared with the sketch-based method [DBLP_conf_icml_NyeHTS19.pdf].
+- **SAT solvers are black-box-like and hard to adapt**: The Lynx paper frames the problem as SAT solvers being “unpredictable black boxes,” and notes that domain-specific adaptations are difficult without deep solver expertise [DBLP_conf_sat_GaneshOSDRS12.pdf].
+- **Domain problems can be too large/complex for off-the-shelf solvers**: Lynx says many domains are “too large or complex for solvers to handle” without domain-specific modifications [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+### Related / follow-up work cited
+For the sketch-based synthesis work, the paper cites or draws on:
+- **Murali et al. (2017)** — neural sketch generation with symbolic synthesis [DBLP_conf_icml_NyeHTS19.pdf].
+- **Solar-Lezama (2008) Sketch** and **angelic nondeterminism** [DBLP_conf_icml_NyeHTS19.pdf].
+- **Balog et al. (2016), Devlin et al. (2017)** — neural program synthesis / learning programs [DBLP_conf_icml_NyeHTS19.pdf].
+- **Dong & Lapata (2018)** — sketches for semantic parsing [DBLP_conf_icml_NyeHTS19.pdf].
+- **Bodik et al. (2010), Feser et al. (2015), Schkufza et al. (2016)** — related symbolic synthesis approaches [DBLP_conf_icml_NyeHTS19.pdf].
+
+For the programmatic SAT solver work:
+- **CryptoMiniSat** as the base solver extended by Lynx [DBLP_conf_sat_GaneshOSDRS12.pdf].
+- Broader incremental/adaptive solving work and **DPLL(T)**-style ideas are referenced as prior context for the callback-based interface [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+If you want, I can also turn this into a paper-by-paper table.
+Judge: {'relevance': 4, 'faithfulness': 3, 'completeness': 3, 'overall': 3, 'rationale': 'The response addresses the question by identifying likely limitations and citing related work, but several claims are inferred rather than directly supported by the passages, and it only covers the two clearly relevant papers in a somewhat uneven way. It also does not clearly distinguish what is explicitly reported as a limitation versus what is merely background or comparison.'}
+------------------------------------------------------------------------
+[2026-09-27T09:59:20] Q1 FIXED
+Q: What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?
+Actions: ['What are the main limitations reported for the methods in this collection, and what related or follow-up work is cited to address them?']
+A: The provided context does not report any explicit *limitations* of the methods in this collection, nor does it include a discussion of related or follow-up work that addresses such limitations. It mainly describes the sketch-based program synthesis method and its training objective [DBLP_conf_icml_NyeHTS19.pdf], and separately describes an extensible SAT solver API for user-added clause generation [DBLP_conf_sat_GaneshOSDRS12.pdf].
+
+So, based only on the context, I can’t reliably name the main limitations or the follow-up work.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 4, 'overall': 4, 'rationale': 'The response appropriately notes that the passages do not state explicit limitations or follow-up work, which is faithful to the provided text. It answers the question as far as the passages allow, but it could have been slightly more helpful by pointing to the closest relevant caveats or implicit limitations in the excerpts.'}
+------------------------------------------------------------------------
+[2026-09-27T09:59:21] PLAN
+{"question": "Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same t", "step": 0, "action": "list_papers", "reasoning": "Need the 2023 papers in the collection first, and the catalog will provide titles/authors/abstracts to identify topics and compare with earlier work.", "queries": [], "keyword": "", "year": "2023", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:23] PLAN
+{"question": "Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same t", "step": 1, "action": "answer", "reasoning": "catalog already listed with these filters -> stop", "queries": [], "keyword": "", "year": "2023", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:28] Q2 AGENT
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: ["list_papers(year='2023', keyword='')"]
+A: I can’t summarize the 2023 papers or compare them to earlier work because the provided catalog shows **no papers matched for 2023** in this collection. The context only says there are 4 papers in the corpus, but none are listed as 2023 papers, so there’s not enough information to identify the papers or their contributions.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The response directly addresses the question by stating that no 2023 papers are present in the provided catalog, so a summary and comparison cannot be made. It stays fully within the evidence from the passages and appropriately explains the limitation.'}
+------------------------------------------------------------------------
+[2026-09-27T09:59:29] Q2 FIXED
+Q: Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.
+Actions: ['Summarize the papers from 2023 in this collection and how their contributions differ from the earlier work on the same topic.']
+A: The provided collection does not include any papers from 2023, so I can’t summarize 2023 papers or compare them to earlier work on the same topic from this context alone.
+
+The only substantive paper context here is from 2019, describing SketchAdapt: a neuro-symbolic program synthesis system with a learned neural sketch generator, an enumerative symbolic synthesizer, a flexible domain-general sketch grammar, and a self-supervised training objective [DBLP_conf_icml_NyeHTS19.pdf]. It is contrasted with earlier work such as RobustFill/Devlin et al. and DeepCoder/Balog et al. in the sense that it learns when to rely on neural proposal vs symbolic search and claims better data efficiency and out-of-sample generalization [DBLP_conf_icml_NyeHTS19.pdf].
+
+If you want, I can summarize the 2019 work in more detail, but I can’t identify any 2023 papers from the provided context.
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 4, 'overall': 5, 'rationale': 'The response correctly notes that no 2023 papers are present in the passages and appropriately avoids inventing content. It also usefully summarizes the one substantive paper available and distinguishes its contributions from earlier work, though it cannot fully answer the original 2023-specific request because the passages do not contain such papers.'}
+------------------------------------------------------------------------
+[2026-09-27T09:59:30] PLAN
+{"question": "Tell me about the evaluation.", "step": 0, "action": "clarify", "reasoning": "The request is too ambiguous to search because multiple papers could be involved and no topic or paper is specified.", "queries": [], "keyword": "", "year": "", "doc_ids": [], "section": "abstract"}
+------------------------------------------------------------------------
+[2026-09-27T09:59:34] Q3 AGENT
+Q: Tell me about the evaluation.
+Actions: []
+A: [Clarifying question] Which paper or topic’s evaluation do you mean?
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 5, 'overall': 5, 'rationale': 'The question was too vague to answer from the provided context, so asking a clarifying question was the right move. The response is precise and appropriate given that no passages were available.'}
+------------------------------------------------------------------------
+[2026-09-27T09:59:35] Q3 FIXED
+Q: Tell me about the evaluation.
+Actions: ['Tell me about the evaluation.']
+A: The evaluation is described as running the system on a set of test problems, where each problem is given as a specification, and the system searches for correct programs that satisfy the spec [DBLP_conf_icml_NyeHTS19.pdf]. The process is:
+
+- The sketch generator, conditioned on the program spec, outputs a distribution over sketches [DBLP_conf_icml_NyeHTS19.pdf].
+- A fixed number of candidate sketches are extracted from that distribution [DBLP_conf_icml_NyeHTS19.pdf].
+- Each candidate sketch is then passed to the program synthesizer [DBLP_conf_icml_NyeHTS19.pdf].
+- The synthesizer performs symbolic enumeration to fill in the holes and search for full programs maximizing the likelihood of the spec [DBLP_conf_icml_NyeHTS19.pdf].
+
+The paper also notes that during training they do not assume a fixed evaluation timeout, so they train the generator to produce sketches that work well across a range of time budgets by sampling the budget from a distribution [DBLP_conf_icml_NyeHTS19.pdf].
+Judge: {'relevance': 5, 'faithfulness': 5, 'completeness': 4, 'overall': 5, 'rationale': 'The response directly explains the evaluation procedure using only details present in the passages, including sketch generation, candidate extraction, and symbolic synthesis. It is mostly complete, though it omits some nuance about the evaluation budget and the fact that the system is evaluated over test problems/specs.'}
+------------------------------------------------------------------------
